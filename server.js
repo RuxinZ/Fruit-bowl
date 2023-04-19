@@ -8,7 +8,12 @@ require('dotenv').config();
 
 const dataController = require('./server/controllers/controller');
 
-app.get('/cards', dataController.getLevelCards, (req, res) => {
+app.get('/cards/:id', dataController.getOneCard, (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  return res.status(200).json(res.locals.card);
+});
+
+app.get('/cards', dataController.getCards, (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   return res.status(200).json(res.locals.cards);
 });

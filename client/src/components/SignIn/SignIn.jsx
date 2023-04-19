@@ -2,77 +2,48 @@ import { generateRandomNumsInArr } from '../../shared/generateRandomNumsInArr';
 export const SignIn = ({
   onSignin,
   setCurPlayer,
-  setPlayerNames,
   setPlayer1,
   setPlayer2,
   setErrmsg,
   player1,
   player2,
   errmsg,
-  setLevelOnecardsData,
-  setLevelOnecards,
-  setLevelTwocardsData,
-  setLevelTwocards,
-  setLevelThreecardsData,
-  setLevelThreecards,
+  setLevelOneArr,
+  setLevelTwoArr,
+  setLevelThreeArr,
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
-    if (!player1 || !player2) {
+    if (!player1.name || !player2.name) {
       setErrmsg('We need two players to start the game!');
       return;
     }
 
     // set up a game
-    setPlayerNames([player1, player2]);
     setCurPlayer(Math.round(Math.random()));
-    const fetchL1Cards = async () => {
-      try {
-        const response = await fetch(
-          'http://localhost:3000/cards/?Level=1',
-          { mode: 'cors' },
-        );
-        const data = await response.json();
-        setLevelOnecardsData(data);
-        setLevelOnecards(generateRandomNumsInArr(40, 1, 40));
-        return;
-      } catch (err) {
-        console.log(`Error fetching L1 cards: ${err}`);
-      }
-    };
-    fetchL1Cards();
 
-    const fetchL2Cards = async () => {
-      try {
-        const response = await fetch(
-          'http://localhost:3000/cards/?Level=2',
-          { mode: 'cors' },
-        );
-        const data = await response.json();
-        setLevelOnecardsData(data);
-        setLevelOnecards(generateRandomNumsInArr(30, 1, 30));
-        return;
-      } catch (err) {
-        console.log(`Error fetching L2 cards: ${err}`);
+    // const fetchCards = async () => {
+    //   try {
+    //     const response = await fetch(`http://localhost:3000/cards`, {
+    //       mode: 'cors',
+    //     });
+    //     const data = await response.json();
+    //     setCardsData(data);
+    //   } catch (err) {
+    //     console.log(`Error fetching L${level} cards: ${err}`);
+    //   }
+    // };
+    // fetchCards();
+    for (let i = 1; i < 4; i++) {
+      switch (i) {
+        case 1:
+          setLevelOneArr(generateRandomNumsInArr(40, 1, 40));
+        case 2:
+          setLevelTwoArr(generateRandomNumsInArr(30, 1, 30));
+        case 3:
+          setLevelThreeArr(generateRandomNumsInArr(20, 1, 20));
       }
-    };
-    fetchL2Cards();
-
-    const fetchL3Cards = async () => {
-      try {
-        const response = await fetch(
-          'http://localhost:3000/cards/?Level=3',
-          { mode: 'cors' },
-        );
-        const data = await response.json();
-        setLevelOnecardsData(data);
-        setLevelOnecards(generateRandomNumsInArr(20, 1, 20));
-        return;
-      } catch (err) {
-        console.log(`Error fetching L3 cards: ${err}`);
-      }
-    };
-    fetchL3Cards();
+    }
 
     // change state mode start -> inGame
     onSignin();
@@ -85,9 +56,9 @@ export const SignIn = ({
         <div className="row">
           <label htmlFor="player1">Player 1: </label>
           <input
-            value={player1}
+            value={player1.name}
             onChange={e => {
-              setPlayer1(e.target.value);
+              setPlayer1({ ...player1, name: e.target.value });
               setErrmsg('');
             }}
             type="text"
@@ -97,9 +68,9 @@ export const SignIn = ({
         <div className="row">
           <label htmlFor="player2">Player 2: </label>
           <input
-            value={player2}
+            value={player2.name}
             onChange={e => {
-              setPlayer2(e.target.value);
+              setPlayer2({ ...player2, name: e.target.value });
               setErrmsg('');
             }}
             type="text"

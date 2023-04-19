@@ -2,23 +2,52 @@ import React, { useState } from 'react';
 import './App.css';
 import { SignIn } from '../SignIn';
 import { Transition } from '../InGame';
+import { Board } from '../Board';
 
 export const App = () => {
   const [mode, setMode] = useState('start');
   const [confirmed, setConfirmed] = useState(false);
   const [curPlayer, setCurPlayer] = useState(0);
-  const [playerNames, setPlayerNames] = useState([]);
-  const [player1, setPlayer1] = useState('');
-  const [player2, setPlayer2] = useState('');
+  const [player1, setPlayer1] = useState({
+    name: '',
+    points: 0,
+    cards: [],
+    whiteToken: 0,
+    whiteCard: 0,
+    greenToken: 0,
+    greenCard: 0,
+    blueToken: 0,
+    blueCard: 0,
+    redToken: 0,
+    redCard: 0,
+    blackToken: 0,
+    blackCard: 0,
+    goldToken: 0,
+    goldCard: 0,
+  });
+  const [player2, setPlayer2] = useState({
+    name: '',
+    points: 0,
+    cards: [],
+    whiteToken: 0,
+    whiteCard: 0,
+    greenToken: 0,
+    greenCard: 0,
+    blueToken: 0,
+    blueCard: 0,
+    redToken: 0,
+    redCard: 0,
+    blackToken: 0,
+    blackCard: 0,
+    goldToken: 0,
+    goldCard: 0,
+  });
   const [errmsg, setErrmsg] = useState('');
   // fetch the cards from db at the start game stage
   //
-  const [levelOnecardsData, setLevelOnecardsData] = useState([]);
-  const [levelOnecards, setLevelOnecards] = useState([]);
-  const [levelTwocardsData, setLevelTwocardsData] = useState([]);
-  const [levelTwocards, setLevelTwocards] = useState([]);
-  const [levelThreecardsData, setLevelThreecardsData] = useState([]);
-  const [levelThreecards, setLevelThreecards] = useState([]);
+  const [levelOneArr, setLevelOneArr] = useState([]);
+  const [levelTwoArr, setLevelTwoArr] = useState([]);
+  const [levelThreeArr, setLevelThreeArr] = useState([]);
   const [bowls, setBowls] = useState([]);
   return (
     <>
@@ -26,19 +55,15 @@ export const App = () => {
         <SignIn
           onSignin={() => setMode('inGame')}
           setCurPlayer={setCurPlayer}
-          setPlayerNames={setPlayerNames}
           player1={player1}
           player2={player2}
           setPlayer1={setPlayer1}
           setPlayer2={setPlayer2}
           setErrmsg={setErrmsg}
           errmsg={errmsg}
-          setLevelOnecardsData={setLevelOnecardsData}
-          setLevelOnecards={setLevelOnecards}
-          setLevelTwocardsData={setLevelTwocardsData}
-          setLevelTwocards={setLevelTwocards}
-          setLevelThreecardsData={setLevelThreecardsData}
-          setLevelThreecards={setLevelThreecards}
+          setLevelOneArr={setLevelOneArr}
+          setLevelTwoArr={setLevelTwoArr}
+          setLevelThreeArr={setLevelThreeArr}
         />
       )}
       {mode === 'inGame' &&
@@ -46,11 +71,12 @@ export const App = () => {
           <Transition
             curPlayer={curPlayer}
             setCurPlayer={setCurPlayer}
-            playerNames={playerNames}
+            player1Name={player1.name}
+            player2Name={player2.name}
             setConfirmed={setConfirmed}
           />
         ) : (
-          <>Start Game</>
+          <Board />
         ))}
 
       {mode === 'gameOver' && <>Game Over </>}
