@@ -15,6 +15,11 @@ export const App = () => {
   //
   const [levelOnecardsData, setLevelOnecardsData] = useState([]);
   const [levelOnecards, setLevelOnecards] = useState([]);
+  const [levelTwocardsData, setLevelTwocardsData] = useState([]);
+  const [levelTwocards, setLevelTwocards] = useState([]);
+  const [levelThreecardsData, setLevelThreecardsData] = useState([]);
+  const [levelThreecards, setLevelThreecards] = useState([]);
+  const [bowls, setBowls] = useState([]);
   return (
     <>
       {mode === 'start' && (
@@ -30,6 +35,10 @@ export const App = () => {
           errmsg={errmsg}
           setLevelOnecardsData={setLevelOnecardsData}
           setLevelOnecards={setLevelOnecards}
+          setLevelTwocardsData={setLevelTwocardsData}
+          setLevelTwocards={setLevelTwocards}
+          setLevelThreecardsData={setLevelThreecardsData}
+          setLevelThreecards={setLevelThreecards}
         />
       )}
       {mode === 'inGame' &&

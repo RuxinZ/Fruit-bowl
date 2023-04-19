@@ -13,14 +13,9 @@ app.get('/cards', dataController.getLevelCards, (req, res) => {
   return res.status(200).json(res.locals.cards);
 });
 
-// app.get('/cards',
-//   dataController.getCards,
-//   (req, res) => {
-//   return res.status(200).json({message: "this is a get request"});
-// })
-
-app.get('/cards/:id', dataController.getOneCard, (req, res) => {
-  return res.status(200).json(res.locals.card);
+app.get('/bowls', dataController.getBowls, (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  return res.status(200).json(res.locals.bowls);
 });
 
 app.get('/', (req, res) => {

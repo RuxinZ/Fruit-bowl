@@ -11,6 +11,10 @@ export const SignIn = ({
   errmsg,
   setLevelOnecardsData,
   setLevelOnecards,
+  setLevelTwocardsData,
+  setLevelTwocards,
+  setLevelThreecardsData,
+  setLevelThreecards,
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,6 +41,38 @@ export const SignIn = ({
       }
     };
     fetchL1Cards();
+
+    const fetchL2Cards = async () => {
+      try {
+        const response = await fetch(
+          'http://localhost:3000/cards/?Level=2',
+          { mode: 'cors' },
+        );
+        const data = await response.json();
+        setLevelOnecardsData(data);
+        setLevelOnecards(generateRandomNumsInArr(30, 1, 30));
+        return;
+      } catch (err) {
+        console.log(`Error fetching L2 cards: ${err}`);
+      }
+    };
+    fetchL2Cards();
+
+    const fetchL3Cards = async () => {
+      try {
+        const response = await fetch(
+          'http://localhost:3000/cards/?Level=3',
+          { mode: 'cors' },
+        );
+        const data = await response.json();
+        setLevelOnecardsData(data);
+        setLevelOnecards(generateRandomNumsInArr(20, 1, 20));
+        return;
+      } catch (err) {
+        console.log(`Error fetching L3 cards: ${err}`);
+      }
+    };
+    fetchL3Cards();
 
     // change state mode start -> inGame
     onSignin();
