@@ -11,6 +11,10 @@ export const App = () => {
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
   const [errmsg, setErrmsg] = useState('');
+  // fetch the cards from db at the start game stage
+  //
+  const [levelOnecardsData, setLevelOnecardsData] = useState([]);
+  const [levelOnecards, setLevelOnecards] = useState([]);
   return (
     <>
       {mode === 'start' && (
@@ -23,6 +27,9 @@ export const App = () => {
           setPlayer1={setPlayer1}
           setPlayer2={setPlayer2}
           setErrmsg={setErrmsg}
+          errmsg={errmsg}
+          setLevelOnecardsData={setLevelOnecardsData}
+          setLevelOnecards={setLevelOnecards}
         />
       )}
       {mode === 'inGame' &&

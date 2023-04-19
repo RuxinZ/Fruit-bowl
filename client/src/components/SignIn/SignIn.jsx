@@ -1,3 +1,4 @@
+import { generateRandomNumsInArr } from '../../shared/generateRandomNumsInArr';
 export const SignIn = ({
   onSignin,
   setCurPlayer,
@@ -8,6 +9,8 @@ export const SignIn = ({
   player1,
   player2,
   errmsg,
+  setLevelOnecardsData,
+  setLevelOnecards,
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,8 +22,21 @@ export const SignIn = ({
     // set up a game
     setPlayerNames([player1, player2]);
     setCurPlayer(Math.round(Math.random()));
-    // setPlayer1('');
-    // setPlayer2('');
+    const fetchL1Cards = async () => {
+      try {
+        const response = await fetch(
+          'http://localhost:3000/cards/?Level=1',
+          { mode: 'cors' },
+        );
+        const data = await response.json();
+        setLevelOnecardsData(data);
+        setLevelOnecards(generateRandomNumsInArr(40, 1, 40));
+        return;
+      } catch (err) {
+        console.log(`Error fetching L1 cards: ${err}`);
+      }
+    };
+    fetchL1Cards();
 
     // change state mode start -> inGame
     onSignin();

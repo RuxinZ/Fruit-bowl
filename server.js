@@ -1,39 +1,36 @@
 // require('dotenv').config();
 const path = require('path');
 const express = require('express');
+
 const app = express();
 
 require('dotenv').config();
 
 const dataController = require('./server/controllers/controller');
 
+app.get('/cards', dataController.getLevelCards, (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  return res.status(200).json(res.locals.cards);
+});
 
-
-app.get('/cards', dataController.getLevelCards,
-  (req, res) => {
-    return res.status(200).json(res.locals.cards);
-  }
-)
-
-// app.get('/cards', 
+// app.get('/cards',
 //   dataController.getCards,
 //   (req, res) => {
 //   return res.status(200).json({message: "this is a get request"});
 // })
 
-app.get('/cards/:id', 
-  dataController.getOneCard,
-  (req, res) => {
+app.get('/cards/:id', dataController.getOneCard, (req, res) => {
   return res.status(200).json(res.locals.card);
-})
+});
 
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, './index.html'));
   // return res.status(200).json({message: 'Welcome to the app!'})
-})
+});
 
-
-app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
+app.use((req, res) =>
+  res.status(404).send("This is not the page you're looking for..."),
+);
 
 // Global error handler
 app.use((err, req, res, next) => {
@@ -47,8 +44,6 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}.`);
-})
-
+});
