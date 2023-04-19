@@ -1,4 +1,5 @@
 import { generateRandomNumsInArr } from '../../shared/generateRandomNumsInArr';
+import './SignIn.css';
 export const SignIn = ({
   onSignin,
   setCurPlayer,

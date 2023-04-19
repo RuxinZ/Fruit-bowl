@@ -1,0 +1,47 @@
+/* body {
+  background-color: red;
+} */
+
+.board {
+  display: grid;
+  gap: 1rem;
+  background-color: green;
+  width: 1180px;
+  height: 820px;
+  grid-template-columns: 2.5fr 5fr 1.5fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr;
+}
+
+.opponent-board {
+  background-color: lightblue;
+  grid-column: 1 / 4;
+}
+.menu-board {
+  background-color: lightcoral;
+  grid-column: 4;
+}
+
+.bowl-board {
+  background-color: lightyellow;
+  grid-row: 2 / 3;
+}
+
+.card-board {
+  background-color: lightgreen;
+}
+
+.token-board {
+  background-color: lightgoldenrodyellow;
+}
+
+.player-board {
+  background-color: lightblue;
+  grid-row: 3;
+  grid-column: 1/4;
+}
+
+.confirm-board {
+  background-color: lightskyblue;
+  grid-row: 3;
+  grid-column: 4;
+}

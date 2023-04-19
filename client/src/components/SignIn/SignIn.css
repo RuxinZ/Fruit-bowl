@@ -1,4 +1,4 @@
-/* .box-container {
+.box-container {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -13,11 +13,6 @@
   border: 2px solid blue;
 } */
 
-#root {
-  /* background-color: purple; */
-  width: 1180px;
-  height: 820px;
-  margin: 0;
-
-  text-align: center;
+.row {
+  margin-block: 2rem;
 }
