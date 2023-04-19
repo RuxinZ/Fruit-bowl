@@ -15,11 +15,11 @@ app.get('/cards', dataController.getLevelCards,
   }
 )
 
-app.get('/cards', 
-  dataController.getCards,
-  (req, res) => {
-  return res.status(200).json({message: "this is a get request"});
-})
+// app.get('/cards', 
+//   dataController.getCards,
+//   (req, res) => {
+//   return res.status(200).json({message: "this is a get request"});
+// })
 
 app.get('/cards/:id', 
   dataController.getOneCard,
@@ -28,7 +28,7 @@ app.get('/cards/:id',
 })
 
 app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, './client/public/index.html'));
+  return res.status(200).sendFile(path.join(__dirname, './index.html'));
   // return res.status(200).json({message: 'Welcome to the app!'})
 })
 
