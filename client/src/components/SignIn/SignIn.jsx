@@ -1,12 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
-
-export const SignIn = ({ onSignin, setCurPlayer, setPlayerNames }) => {
-  const [player1, setPlayer1] = useState('');
-  const [player2, setPlayer2] = useState('');
-  const [errmsg, setErrmsg] = useState('');
-  const [players, setPlayers] = useState([]);
-
+export const SignIn = ({
+  onSignin,
+  setCurPlayer,
+  setPlayerNames,
+  setPlayer1,
+  setPlayer2,
+  setErrmsg,
+  player1,
+  player2,
+  errmsg,
+}) => {
   function handleSubmit(e) {
     e.preventDefault();
     if (!player1 || !player2) {
@@ -24,7 +26,7 @@ export const SignIn = ({ onSignin, setCurPlayer, setPlayerNames }) => {
     onSignin();
   }
   return (
-    <div className="signin-container">
+    <div className="box-container">
       <h1>Fruit Bowl</h1>
       <h2>Enter player names:</h2>
       <form onSubmit={handleSubmit} className="player-signin">
