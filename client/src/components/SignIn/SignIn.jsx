@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const SignIn = ({ onSignin, setCurPlayer }) => {
+export const SignIn = ({ onSignin, setCurPlayer, setPlayerNames }) => {
   const [player1, setPlayer1] = useState('');
   const [player2, setPlayer2] = useState('');
   const [errmsg, setErrmsg] = useState('');
@@ -15,7 +15,7 @@ export const SignIn = ({ onSignin, setCurPlayer }) => {
     }
 
     // set up a game
-    setPlayers([player1, player2]);
+    setPlayerNames([player1, player2]);
     setCurPlayer(Math.round(Math.random()));
     // setPlayer1('');
     // setPlayer2('');
