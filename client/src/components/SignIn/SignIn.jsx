@@ -27,6 +27,9 @@ export const SignIn = ({
     if (!player1.name || !player2.name) {
       setErrmsg('We need two players to start the game!');
       return;
+    } else if (player1.name === player2.name) {
+      setErrmsg('You are not playing against yourself. Go grab a friend!');
+      return;
     }
 
     // set up a game
@@ -137,8 +140,8 @@ export const SignIn = ({
           />
         </div>
         <div className="row">
-          <p>{errmsg}</p>
-          <button className="start-btn">Start</button>
+          <p className="error-msg">{errmsg}</p>
+          <button className="start-btn">START</button>
         </div>
       </form>
     </div>

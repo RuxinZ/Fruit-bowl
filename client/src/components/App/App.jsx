@@ -131,8 +131,8 @@ export const App = () => {
             setCurrentCards2={setCurrentCards2}
             setCurrentCards3={setCurrentCards3}
             setCard1_1={setCard1_1}
-            setCard1_2={setCard1_1}
-            setCard1_3={setCard1_1}
+            setCard1_2={setCard1_2}
+            setCard1_3={setCard1_3}
             setCard1_4={setCard1_4}
             setCard2_1={setCard2_1}
             setCard2_2={setCard2_2}

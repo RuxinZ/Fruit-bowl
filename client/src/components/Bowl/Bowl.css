@@ -1,17 +1,24 @@
 .card-container {
   width: 100px;
   height: 100px;
-  background-color: lightyellow;
+  background-color: #fdd614;
   border-radius: 10px;
   border: 2px solid black;
   margin: auto;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .card-container:hover {
   filter: brightness(80%);
   cursor: pointer;
+}
+
+.bowl-card-header {
+  /* border: 2px solid red; */
+  margin-bottom: 0.5rem;
 }
 
 .hidden {
@@ -21,7 +28,6 @@
 .points {
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 1rem;
   align-self: flex-end;
 }
 

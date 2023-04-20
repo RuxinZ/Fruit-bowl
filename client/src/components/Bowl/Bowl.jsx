@@ -2,7 +2,7 @@ import './Bowl.css';
 export const Bowl = ({ bowlIndex, info }) => {
   return (
     <div className="card-container">
-      <div className="card-header">
+      <div className="bowl-card-header">
         <div className="points">3</div>
       </div>
 
