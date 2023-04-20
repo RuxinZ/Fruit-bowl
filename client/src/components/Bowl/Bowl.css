@@ -7,6 +7,10 @@
   margin: auto;
   padding: 1rem;
 }
+.card-container:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
 
 .hidden {
   display: none;

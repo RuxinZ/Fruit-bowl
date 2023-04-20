@@ -10,9 +10,14 @@
   width: 100px;
   height: 130px;
   border: 2px solid black;
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
   border-radius: 8px;
 }
+.card:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
 .facedown {
   font-size: 3rem;
   display: flex;

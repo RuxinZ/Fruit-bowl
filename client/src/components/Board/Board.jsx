@@ -58,61 +58,64 @@ export const Board = ({
   for (let i = 0; i < 6; i++) {
     tokens.push(<Token key={i} color={obj[i]} />);
   }
-  const curPlayerName = curPlayer === 0 ? player1.name : player2.name;
-  const curOpponentName = curPlayer === 1 ? player1.name : player2.name;
+  const currentPlayer = curPlayer === 0 ? player1 : player2;
+  const curOpponent = curPlayer === 1 ? player1 : player2;
   return (
     <div className="board">
       <div className="opponent-board">
-        <div className="player-name">{curOpponentName}</div>
-        <div className="player-points">Current Points</div>
+        <div className="player-name">{curOpponent.name}</div>
+        <div className="player-points">
+          Current Points: {curOpponent.points}
+        </div>
+
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-green">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.greenToken}</div>
+              <div className="num">{curOpponent.greenCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-white">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.whiteToken}</div>
+              <div className="num">{curOpponent.whiteCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-blue">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.blueToken}</div>
+              <div className="num">{curOpponent.blueCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-black">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.blackToken}</div>
+              <div className="num">{curOpponent.blackCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-red">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.redToken}</div>
+              <div className="num">{curOpponent.redCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-gold">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{curOpponent.goldToken}</div>
+              <div className="num">{curOpponent.goldCard}</div>
             </div>
           </div>
         </div>
@@ -124,11 +127,11 @@ export const Board = ({
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
-            fill="currentColor"
+            fillRule="currentColor"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
@@ -147,56 +150,58 @@ export const Board = ({
         {tokens}
       </div>
       <div className="player-board">
-        <div className="player-name">{curPlayerName}</div>
-        <div className="player-points">Current Points</div>
+        <div className="player-name">{currentPlayer.name}</div>
+        <div className="player-points">
+          Current Points: {currentPlayer.points}
+        </div>
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-green">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.greenToken}</div>
+              <div className="num">{currentPlayer.greenCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-white">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.whiteToken}</div>
+              <div className="num">{currentPlayer.whiteCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-blue">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.blueToken}</div>
+              <div className="num">{currentPlayer.blueCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-black">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.blackToken}</div>
+              <div className="num">{currentPlayer.blackCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-red">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.redToken}</div>
+              <div className="num">{currentPlayer.redCard}</div>
             </div>
           </div>
           <div className="token-card">
-            <div className="box">
+            <div className="box b-gold">
               <div className="token-icon">Tokens</div>
               <div className="cards-icon">Cards</div>
-              <div className="num">0</div>
-              <div className="num">0</div>
+              <div className="num">{currentPlayer.goldToken}</div>
+              <div className="num">{currentPlayer.goldCard}</div>
             </div>
           </div>
         </div>

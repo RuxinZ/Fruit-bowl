@@ -27,3 +27,9 @@
 img {
   width: 1rem;
 }
+
+.btn {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+}
