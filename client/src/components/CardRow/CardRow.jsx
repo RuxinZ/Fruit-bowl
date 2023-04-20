@@ -1,6 +1,6 @@
 import './CardRow.css';
 import { Card } from '../Card/Card';
-export const CardRow = ({ info, level }) => {
+export const CardRow = ({ cardArr, level }) => {
   // console.log('info: ', info);
   const cards = [];
   for (let i = 0; i < 4; i++) {

@@ -22,6 +22,11 @@ app.get('/bowls', dataController.getBowls, (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   return res.status(200).json(res.locals.bowls);
 });
+app.get('/card-icon', (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.join(__dirname, 'client/assets/cards.png'));
+});
 
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, './index.html'));

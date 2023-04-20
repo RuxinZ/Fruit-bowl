@@ -5,24 +5,28 @@ export const Bowl = ({ bowlIndex, info }) => {
       <div className="points">3</div>
       <div>
         <div className={`${info.Green ? 'green' : 'hidden'}`}>
-          <div>Green:</div>
-          <div>{info.Green}</div>
+          <div>Green:&nbsp;</div>
+          <div>{info.Green}&nbsp;</div>
+          <img src="http://localhost:3000/card-icon" alt="card" />
         </div>
         <div className={`${info.White ? 'white' : 'hidden'}`}>
-          <div>White:</div>
-          <div>{info.White}</div>
+          <div>White: &nbsp;</div>
+          <div>{info.White}&nbsp;</div>
+          <img src="http://localhost:3000/card-icon" alt="card" />
         </div>
         <div className={`${info.Blue ? 'blue' : 'hidden'}`}>
-          <div>Blue:</div>
-          <div>{info.Blue}</div>
+          <div>Blue: &nbsp;</div>
+          <div>{info.Blue}&nbsp;</div>
         </div>
         <div className={`${info.Black ? 'black' : 'hidden'}`}>
-          <div>Black:</div>
-          <div>{info.Black}</div>
+          <div>Black: &nbsp; </div>
+          <div>{info.Black}&nbsp;</div>
+          <img src="http://localhost:3000/card-icon" alt="card" />
         </div>
         <div className={`${info.Red ? 'red' : 'hidden'}`}>
-          <div>Red:</div>
-          <div>{info.Red}</div>
+          <div>Red: &nbsp;</div>
+          <div>{info.Red}&nbsp;</div>
+          <img src="http://localhost:3000/card-icon" alt="card" />
         </div>
       </div>
     </div>

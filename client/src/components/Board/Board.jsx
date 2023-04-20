@@ -24,7 +24,7 @@ export const Board = ({
     cardRows.push(
       <CardRow
         key={i}
-        info={
+        cardArr={
           i === 1 ? levelOneArr : i === 2 ? levelTwoArr : levelThreeArr
         }
         level={i}
@@ -34,8 +34,16 @@ export const Board = ({
 
   // make token board
   const tokens = [];
+  const obj = {
+    0: 'Green',
+    1: 'White',
+    2: 'Blue',
+    3: 'Black',
+    4: 'Red',
+    5: 'Gold',
+  };
   for (let i = 0; i < 6; i++) {
-    tokens.push(<Token key={i} />);
+    tokens.push(<Token key={i} color={obj[i]} />);
   }
 
   return (
@@ -105,7 +113,7 @@ export const Board = ({
       </div>
       <div className="card-board">{cardRows}</div>
       <div className="token-board">
-        <div></div>
+        <div className="board-title">Tokens</div>
         {tokens}
       </div>
       <div className="player-board">

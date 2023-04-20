@@ -2,18 +2,40 @@
   /* border: 2px solid black; */
   height: 50px;
   display: grid;
-  gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   place-items: center;
 }
 
+.value {
+  font-size: 2rem;
+}
+
 .token {
   border: 2px solid black;
-  width: 40px;
+  width: 60px;
   height: 40px;
   border-radius: 50%;
 }
 
-.value {
-  font-size: 2rem;
+.Green {
+  background-color: #40c057;
+}
+.White {
+  background-color: #ffffff;
+}
+
+.Blue {
+  background-color: #228be6;
+}
+
+.Black {
+  background-color: #000000;
+}
+
+.Red {
+  background-color: #c92a2a;
+}
+
+.Gold {
+  background-color: #fab005;
 }
