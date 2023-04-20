@@ -23,15 +23,10 @@ export const Board = ({
   setCurrentCards2,
   setCurrentCards3,
 }) => {
-  console.log('cur1: ', currentCards1);
-  console.log('cur2: ', currentCards2);
-  console.log('cur3: ', currentCards3);
-  // console.log('L1: ', levelOneArr);
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
     <Bowl key={i} bowlIndex={i} info={obj} />
   ));
-  // console.log('l1cards: ', levelOneArr);
   // make card board
   const cardRows = [];
   for (let i = 3; i > 0; i--) {
@@ -80,7 +75,11 @@ export const Board = ({
   const curOpponent = curPlayer === 1 ? player1 : player2;
   return (
     <div className="board">
-      <div className="opponent-board">
+      <div
+        className={
+          'opponent-board ' + `${curOpponent.backgroundColorClassName}`
+        }
+      >
         <div className="player-name">{curOpponent.name}</div>
         <div className="player-points">
           Current Points: {curOpponent.points}
@@ -167,7 +166,11 @@ export const Board = ({
         <div className="board-title">Tokens</div>
         {tokens}
       </div>
-      <div className="player-board">
+      <div
+        className={
+          'player-board ' + `${currentPlayer.backgroundColorClassName}`
+        }
+      >
         <div className="player-name">{currentPlayer.name}</div>
         <div className="player-points">
           Current Points: {currentPlayer.points}

@@ -1,6 +1,5 @@
 import './Card.css';
 export const Card = ({ info }) => {
-  console.log('info,', info);
   return (
     <div className="card">
       <div className="points">{info.Points}</div>

@@ -30,6 +30,7 @@ export const App = () => {
     redCard: 10,
     goldToken: 11,
     goldCard: 12,
+    backgroundColorClassName: 'player1background',
   });
   const [player2, setPlayer2] = useState({
     name: '',
@@ -47,6 +48,7 @@ export const App = () => {
     redCard: 20,
     goldToken: 21,
     goldCard: 22,
+    backgroundColorClassName: 'player2background',
   });
   const [errmsg, setErrmsg] = useState('');
   // fetch the cards from db at the start game stage
@@ -88,8 +90,8 @@ export const App = () => {
           <Transition
             curPlayer={curPlayer}
             setCurPlayer={setCurPlayer}
-            player1Name={player1.name}
-            player2Name={player2.name}
+            player1={player1}
+            player2={player2}
             setConfirmed={setConfirmed}
           />
         ) : (
