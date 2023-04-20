@@ -8,7 +8,7 @@
   background-color: green;
   width: 1180px;
   height: 820px;
-  grid-template-columns: 2.5fr 5fr 1.5fr 1fr;
+  grid-template-columns: 1.7fr 5fr 1.5fr 0.8fr;
   grid-template-rows: 1fr 3fr 2fr;
 }
 
@@ -22,8 +22,11 @@
 }
 
 .bowl-board {
-  background-color: lightyellow;
+  background-color: red;
   grid-row: 2 / 3;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .card-board {

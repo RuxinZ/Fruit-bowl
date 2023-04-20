@@ -7,7 +7,7 @@ export const Transition = ({
   player2Name,
   setConfirmed,
 }) => {
-  console.log('current Player: ', curPlayer);
+  // console.log('current Player: ', curPlayer);
   const curPlayerName = curPlayer === 0 ? player1Name : player2Name;
   return (
     <div className="box-container">

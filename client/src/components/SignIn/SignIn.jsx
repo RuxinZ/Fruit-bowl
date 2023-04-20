@@ -35,7 +35,6 @@ export const SignIn = ({
           mode: 'cors',
         });
         const data = await response.json();
-        // console.log(data);
 
         const arr1 = [];
         for (let i = 0; i < l1Ind.length; i++) {
@@ -66,7 +65,7 @@ export const SignIn = ({
           mode: 'cors',
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         const arr = [];
         for (let i = 0; i < bowlInd.length; i++) {
           arr.push(data.find(obj => obj.ID === bowlInd[i].toString()));

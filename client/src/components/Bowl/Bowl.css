@@ -1,0 +1,26 @@
+.card-container {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  margin: auto;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.points {
+  font-size: 2rem;
+  text-align: end;
+}
+
+.green,
+.white,
+.blue,
+.black,
+.red {
+  display: flex;
+  /* border: 2px solid red; */
+}

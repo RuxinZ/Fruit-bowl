@@ -3,3 +3,4 @@ export * from './SignIn';
 export * from './InGame';
 export * from './Board';
 export * from './Bowl';
+export * from './CardRow';
