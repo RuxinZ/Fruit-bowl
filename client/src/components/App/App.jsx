@@ -102,6 +102,8 @@ export const App = () => {
             levelThreeArr={levelThreeArr}
             player1={player1}
             player2={player2}
+            setPlayer1={setPlayer1}
+            setPlayer2={setPlayer2}
             setLevelOneArr={setLevelOneArr}
             setLevelTwoArr={setLevelTwoArr}
             setLevelThreeArr={setLevelThreeArr}

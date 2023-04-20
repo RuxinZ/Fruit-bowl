@@ -13,6 +13,8 @@ export const Board = ({
   setLevelThreeArr,
   player1,
   player2,
+  setPlayer1,
+  setPlayer2,
   setConfirmed,
   curPlayer,
   setCurPlayer,
@@ -23,6 +25,8 @@ export const Board = ({
   setCurrentCards2,
   setCurrentCards3,
 }) => {
+  const currentPlayer = curPlayer === 0 ? player1 : player2;
+  const curOpponent = curPlayer === 1 ? player1 : player2;
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
     <Bowl key={i} bowlIndex={i} info={obj} />
@@ -33,6 +37,9 @@ export const Board = ({
     cardRows.push(
       <CardRow
         key={i}
+        currentPlayer={currentPlayer}
+        setPlayer1={setPlayer1}
+        setPlayer2={setPlayer2}
         cardArr={
           i === 1 ? levelOneArr : i === 2 ? levelTwoArr : levelThreeArr
         }
@@ -69,10 +76,17 @@ export const Board = ({
     5: 'Gold',
   };
   for (let i = 0; i < 6; i++) {
-    tokens.push(<Token key={i} color={obj[i]} />);
+    tokens.push(
+      <Token
+        key={i}
+        color={obj[i]}
+        currentPlayer
+        player1={player1}
+        player2={player2}
+      />,
+    );
   }
-  const currentPlayer = curPlayer === 0 ? player1 : player2;
-  const curOpponent = curPlayer === 1 ? player1 : player2;
+
   return (
     <div className="board">
       <div

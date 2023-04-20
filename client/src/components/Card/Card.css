@@ -1,3 +1,69 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
 .points {
   margin-bottom: 0;
+  background-color: #fed4a7;
+  width: 35px;
+  height: 35px;
+  border-radius: 25%;
+  align-self: flex-end;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hidden-point {
+  color: whitesmoke;
+  background-color: whitesmoke;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.card-main {
+  font-size: 0.9rem;
+}
+
+.card-Green {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #40c057;
+}
+.card-White {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #ffffff;
+}
+.card-Blue {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #228be6;
+}
+
+.card-Black {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #000000;
+}
+.card-Red {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #c92a2a;
 }

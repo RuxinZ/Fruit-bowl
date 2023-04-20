@@ -2,8 +2,11 @@ import './Bowl.css';
 export const Bowl = ({ bowlIndex, info }) => {
   return (
     <div className="card-container">
-      <div className="points">3</div>
-      <div>
+      <div className="card-header">
+        <div className="points">3</div>
+      </div>
+
+      <div className="card-main">
         <div className={`${info.Green ? 'green' : 'hidden'}`}>
           <div>Green:&nbsp;</div>
           <div>{info.Green}&nbsp;</div>

@@ -6,11 +6,22 @@ export const CardRow = ({
   setCards,
   setCurrentCards,
   level,
+  currentPlayer,
+  setPlayer1,
+  setPlayer2,
 }) => {
   // console.log('info: ', info);
   const cards = [];
   for (let i = 0; i < 4; i++) {
-    cards.push(<Card key={i} info={currentCards[i]} />);
+    cards.push(
+      <Card
+        key={i}
+        info={currentCards[i]}
+        currentPlayer={currentPlayer}
+        setPlayer1={setPlayer1}
+        setPlayer2={setPlayer2}
+      />,
+    );
   }
   const levelLetter = level === 1 ? 'I' : level === 2 ? 'II' : 'III';
   return (
