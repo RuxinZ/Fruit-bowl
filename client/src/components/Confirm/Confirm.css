@@ -1,3 +1,9 @@
 .btn {
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.btn:hover {
+  cursor: pointer;
 }

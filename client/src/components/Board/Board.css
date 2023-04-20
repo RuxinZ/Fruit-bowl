@@ -7,27 +7,30 @@
   display: grid;
   gap: 1rem;
   background-color: lightseagreen;
-  width: 1180px;
+  /* width: 1180px; */
   height: 820px;
   grid-template-columns: 1.7fr 5fr 1.5fr 0.8fr;
   grid-template-rows: 1fr 3fr 2fr;
 }
 
 .opponent-board {
-  background-color: lightblue;
+  background-color: lightcyan;
+  border-bottom-right-radius: 10px;
   grid-column: 1 / 4;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 3fr;
 }
 .menu-board {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   grid-column: 4;
 }
 
 .bowl-board {
   background-color: lightskyblue;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   grid-row: 2 / 3;
   display: grid;
   gap: 1rem;
@@ -43,6 +46,7 @@
 
 .token-board {
   background-color: lightgoldenrodyellow;
+  border-radius: 10px;
   display: grid;
   gap: 1rem;
   place-items: center;
@@ -50,7 +54,9 @@
 }
 
 .player-board {
-  background-color: lightblue;
+  background-color: lightcyan;
+  /* border-top-left-radius: 10px; */
+  border-top-right-radius: 10px;
   grid-row: 3;
   grid-column: 1/4;
   display: grid;
@@ -60,7 +66,7 @@
 }
 
 .confirm-board {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   grid-row: 3;
   grid-column: 4;
   display: grid;
@@ -75,15 +81,21 @@
 
 .token-card-board {
   grid-column: 2 / 8;
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr;
   place-items: center;
 }
 .reserved-cards {
   grid-column: 8/10;
-  background-color: lightpink;
+  background-color: lightblue;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .player-points {
@@ -109,4 +121,26 @@
 .board-title {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.token-row {
+  grid-column: 1/9;
+  display: flex;
+  flex-direction: row;
+}
+
+.token-row .value {
+  display: none;
+}
+
+.menu-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  background-color: whitesmoke;
+  border-radius: 25%;
+  padding: 0.5rem;
 }

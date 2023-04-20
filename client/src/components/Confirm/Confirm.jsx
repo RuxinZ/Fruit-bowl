@@ -1,3 +1,4 @@
+import './Confirm.css';
 export const Confirm = () => {
   return (
     <>

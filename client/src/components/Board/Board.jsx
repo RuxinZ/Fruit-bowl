@@ -52,6 +52,7 @@ export const Board = ({
         <div className="player-name">Opponent Name</div>
         <div className="player-points">Current Points</div>
         <div className="token-card-board">
+          <div className="token-row">{tokens}</div>
           <div className="token-card">
             <div className="box">
               <div className="token-icon">Tokens</div>
@@ -103,11 +104,26 @@ export const Board = ({
         </div>
         <div className="reserved-cards">Reserved Cards</div>
       </div>
-      <div className="menu-board">Menu</div>
+      <div className="menu-board">
+        <button className="btn menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+      </div>
       <div
         className="bowl-board"
         p1score={player1.points}
-        p2score={player2.points}
+        // p2score={player2.points}
       >
         {bowls}
       </div>
@@ -120,6 +136,7 @@ export const Board = ({
         <div className="player-name">Player Name</div>
         <div className="player-points">Current Points</div>
         <div className="token-card-board">
+          <div className="token-row">{tokens}</div>
           <div className="token-card">
             <div className="box">
               <div className="token-icon">Tokens</div>
