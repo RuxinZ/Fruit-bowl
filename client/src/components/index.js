@@ -4,3 +4,6 @@ export * from './InGame';
 export * from './Board';
 export * from './Bowl';
 export * from './CardRow';
+export * from './Card';
+export * from './Token';
+export * from './Confirm';

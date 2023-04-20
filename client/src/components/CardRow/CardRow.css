@@ -1,0 +1,15 @@
+.row-container {
+  /* border: 2px solid blue; */
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+}
+
+.card {
+  width: 100px;
+  height: 130px;
+  border: 2px solid black;
+  background-color: whitesmoke;
+  border-radius: 8px;
+}

@@ -86,8 +86,11 @@ export const SignIn = ({
       <h2>Enter player names:</h2>
       <form onSubmit={handleSubmit} className="player-signin">
         <div className="row">
-          <label htmlFor="player1">Player 1: </label>
+          <label className="label" htmlFor="player1">
+            Player 1:
+          </label>
           <input
+            className="input"
             value={player1.name}
             onChange={e => {
               setPlayer1({ ...player1, name: e.target.value });
@@ -98,8 +101,11 @@ export const SignIn = ({
           />
         </div>
         <div className="row">
-          <label htmlFor="player2">Player 2: </label>
+          <label className="label" htmlFor="player2">
+            Player 2:
+          </label>
           <input
+            className="input"
             value={player2.name}
             onChange={e => {
               setPlayer2({ ...player2, name: e.target.value });

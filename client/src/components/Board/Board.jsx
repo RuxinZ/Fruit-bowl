@@ -1,6 +1,8 @@
 import './Board.css';
 import { Bowl } from '../Bowl';
-import { CardRow } from '../CardRow/CardRow';
+import { CardRow } from '../CardRow';
+import { Token } from '../Token';
+import { Confirm } from '../Confirm';
 export const Board = ({
   bowlsArr,
   levelOneArr,
@@ -29,9 +31,20 @@ export const Board = ({
     );
   }
 
+  // make token board
+  const tokens = [];
+  for (let i = 0; i < 6; i++) {
+    tokens.push(<Token key={i} />);
+  }
+
   return (
     <div className="board">
-      <div className="opponent-board">Opponent Board</div>
+      <div className="opponent-board">
+        <div className="player-name">Player Name</div>
+        <div className="player-points">Current Points</div>
+        <div className="token-card">Tokens/Cards</div>
+        <div className="reserved-cards">Reserved Cards</div>
+      </div>
       <div className="menu-board">Menu</div>
       <div
         className="bowl-board"
@@ -41,9 +54,17 @@ export const Board = ({
         {bowls}
       </div>
       <div className="card-board">{cardRows}</div>
-      <div className="token-board">Token Board</div>
-      <div className="player-board">Player Board</div>
-      <div className="confirm-board">Confirm</div>
+      <div className="token-board">
+        <div></div>
+        {tokens}
+      </div>
+      <div className="player-board">
+        <div className="player-name">Player Name</div>
+        <div className="player-points">Current Points</div>
+        <div className="token-card">Tokens/Cards</div>
+        <div className="reserved-cards">Reserved Cards</div>
+      </div>
+      <div className="confirm-board">{<Confirm />}</div>
     </div>
   );
 };

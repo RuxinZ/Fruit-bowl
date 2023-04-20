@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-
+import '../InGame/Transition.css';
 export const Transition = ({
   curPlayer,
   player1Name,
