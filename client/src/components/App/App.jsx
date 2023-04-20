@@ -51,14 +51,27 @@ export const App = () => {
     backgroundColorClassName: 'player2background',
   });
   const [errmsg, setErrmsg] = useState('');
-  // fetch the cards from db at the start game stage
 
+  // cards
   const [levelOneArr, setLevelOneArr] = useState([]);
   const [levelTwoArr, setLevelTwoArr] = useState([]);
   const [levelThreeArr, setLevelThreeArr] = useState([]);
   const [currentCards1, setCurrentCards1] = useState([]);
   const [currentCards2, setCurrentCards2] = useState([]);
   const [currentCards3, setCurrentCards3] = useState([]);
+  const [card1_1, setCard1_1] = useState({});
+  const [card1_2, setCard1_2] = useState({});
+  const [card1_3, setCard1_3] = useState({});
+  const [card1_4, setCard1_4] = useState({});
+  const [card2_1, setCard2_1] = useState({});
+  const [card2_2, setCard2_2] = useState({});
+  const [card2_3, setCard2_3] = useState({});
+  const [card2_4, setCard2_4] = useState({});
+  const [card3_1, setCard3_1] = useState({});
+  const [card3_2, setCard3_2] = useState({});
+  const [card3_3, setCard3_3] = useState({});
+  const [card3_4, setCard3_4] = useState({});
+
   const [bowlsArr, setBowlsArr] = useState([]);
   return (
     <>
@@ -117,6 +130,18 @@ export const App = () => {
             setCurrentCards1={setCurrentCards1}
             setCurrentCards2={setCurrentCards2}
             setCurrentCards3={setCurrentCards3}
+            setCard1_1={setCard1_1}
+            setCard1_2={setCard1_1}
+            setCard1_3={setCard1_1}
+            setCard1_4={setCard1_4}
+            setCard2_1={setCard2_1}
+            setCard2_2={setCard2_2}
+            setCard2_3={setCard2_3}
+            setCard2_4={setCard2_4}
+            setCard3_1={setCard3_1}
+            setCard3_2={setCard3_2}
+            setCard3_3={setCard3_3}
+            setCard3_4={setCard3_4}
           />
         ))}
 

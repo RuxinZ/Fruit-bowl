@@ -19,7 +19,7 @@ export const Transition = ({
         Current Player: {currentPlayer.name}
       </h2>
       <div className="row">
-        <button className="btn" onClick={() => setConfirmed(true)}>
+        <button className="start-btn" onClick={() => setConfirmed(true)}>
           Confirm
         </button>
       </div>

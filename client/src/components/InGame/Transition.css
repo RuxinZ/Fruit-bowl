@@ -15,3 +15,11 @@ body {
 .player2background {
   background-color: #f2d1cc;
 }
+
+.start-btn {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.5rem 3rem;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}

@@ -24,6 +24,18 @@ export const Board = ({
   setCurrentCards1,
   setCurrentCards2,
   setCurrentCards3,
+  setCard1_1,
+  setCard1_2,
+  setCard1_3,
+  setCard1_4,
+  setCard2_1,
+  setCard2_2,
+  setCard2_3,
+  setCard2_4,
+  setCard3_1,
+  setCard3_2,
+  setCard3_3,
+  setCard3_4,
 }) => {
   const currentPlayer = curPlayer === 0 ? player1 : player2;
   const curOpponent = curPlayer === 1 ? player1 : player2;

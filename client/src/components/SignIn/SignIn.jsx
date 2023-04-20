@@ -138,7 +138,7 @@ export const SignIn = ({
         </div>
         <div className="row">
           <p>{errmsg}</p>
-          <button className="btn">Start</button>
+          <button className="start-btn">Start</button>
         </div>
       </form>
     </div>

@@ -29,8 +29,13 @@
   font-size: 0.9rem;
   display: flex;
   flex-direction: column;
+  align-items: end;
 }
-
+.bowl-label-container {
+  margin-bottom: 0.15rem;
+  display: flex;
+  flex-direction: row;
+}
 .green,
 .white,
 .blue,
@@ -39,4 +44,15 @@
   display: flex;
 
   /* border: 2px solid red; */
+}
+
+.bowl-label {
+  width: 20px;
+  height: 20px;
+  border-radius: 25%;
+  border: 1px solid black;
+}
+
+.icon-containter {
+  margin-left: 0.5rem;
 }
