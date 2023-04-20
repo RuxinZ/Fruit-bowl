@@ -3,6 +3,12 @@ import './App.css';
 import { SignIn } from '../SignIn';
 import { Transition } from '../InGame';
 import { Board } from '../Board';
+import {
+  l1Ind,
+  l2Ind,
+  l3Ind,
+  bowlInd,
+} from '../../shared/randomiedIndices';
 
 export const App = () => {
   const [mode, setMode] = useState('start');
@@ -44,11 +50,11 @@ export const App = () => {
   });
   const [errmsg, setErrmsg] = useState('');
   // fetch the cards from db at the start game stage
-  //
+
   const [levelOneArr, setLevelOneArr] = useState([]);
   const [levelTwoArr, setLevelTwoArr] = useState([]);
   const [levelThreeArr, setLevelThreeArr] = useState([]);
-  const [bowls, setBowls] = useState([]);
+  const [bowlsArr, setBowlsArr] = useState([]);
   return (
     <>
       {mode === 'start' && (
@@ -64,6 +70,11 @@ export const App = () => {
           setLevelOneArr={setLevelOneArr}
           setLevelTwoArr={setLevelTwoArr}
           setLevelThreeArr={setLevelThreeArr}
+          setBowlsArr={setBowlsArr}
+          l1Ind={l1Ind}
+          l2Ind={l2Ind}
+          l3Ind={l3Ind}
+          bowlInd={bowlInd}
         />
       )}
       {mode === 'inGame' &&
@@ -76,7 +87,12 @@ export const App = () => {
             setConfirmed={setConfirmed}
           />
         ) : (
-          <Board />
+          <Board
+            bowlsArr={bowlsArr}
+            levelOneArr={levelOneArr}
+            levelTwoArr={levelTwoArr}
+            levelThreeArr={levelThreeArr}
+          />
         ))}
 
       {mode === 'gameOver' && <>Game Over </>}

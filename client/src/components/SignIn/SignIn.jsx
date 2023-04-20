@@ -12,9 +12,15 @@ export const SignIn = ({
   setLevelOneArr,
   setLevelTwoArr,
   setLevelThreeArr,
+  setBowlsArr,
+  l1Ind,
+  l2Ind,
+  l3Ind,
+  bowlInd,
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
+    // console.log('clicked!');
     if (!player1.name || !player2.name) {
       setErrmsg('We need two players to start the game!');
       return;
@@ -23,28 +29,54 @@ export const SignIn = ({
     // set up a game
     setCurPlayer(Math.round(Math.random()));
 
-    // const fetchCards = async () => {
-    //   try {
-    //     const response = await fetch(`http://localhost:3000/cards`, {
-    //       mode: 'cors',
-    //     });
-    //     const data = await response.json();
-    //     setCardsData(data);
-    //   } catch (err) {
-    //     console.log(`Error fetching L${level} cards: ${err}`);
-    //   }
-    // };
-    // fetchCards();
-    for (let i = 1; i < 4; i++) {
-      switch (i) {
-        case 1:
-          setLevelOneArr(generateRandomNumsInArr(40, 1, 40));
-        case 2:
-          setLevelTwoArr(generateRandomNumsInArr(30, 1, 30));
-        case 3:
-          setLevelThreeArr(generateRandomNumsInArr(20, 1, 20));
+    const fetchCards = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/cards`, {
+          mode: 'cors',
+        });
+        const data = await response.json();
+        // console.log(data);
+
+        const arr1 = [];
+        for (let i = 0; i < l1Ind.length; i++) {
+          arr1.push(data.find(obj => obj.ID === l1Ind[i].toString()));
+        }
+        setLevelOneArr(arr1);
+
+        const arr2 = [];
+        for (let i = 0; i < l2Ind.length; i++) {
+          arr2.push(data.find(obj => obj.ID === l2Ind[i].toString()));
+        }
+        setLevelTwoArr(arr2);
+
+        const arr3 = [];
+        for (let i = 0; i < l3Ind.length; i++) {
+          arr3.push(data.find(obj => obj.ID === l3Ind[i].toString()));
+        }
+        setLevelThreeArr(arr3);
+      } catch (err) {
+        console.log(`Error fetching cards: ${err}`);
       }
-    }
+    };
+    fetchCards();
+
+    const fetchBowls = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/bowls`, {
+          mode: 'cors',
+        });
+        const data = await response.json();
+        console.log(data);
+        const arr = [];
+        for (let i = 0; i < bowlInd.length; i++) {
+          arr.push(data.find(obj => obj.ID === bowlInd[i].toString()));
+        }
+        setBowlsArr(arr);
+      } catch (err) {
+        console.log(`Error fetching bowl cards: ${err}`);
+      }
+    };
+    fetchBowls();
 
     // change state mode start -> inGame
     onSignin();

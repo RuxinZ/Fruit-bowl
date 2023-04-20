@@ -1,4 +1,4 @@
-export const generateRandomNumsInArr = (len, min, max) => {
+export const generateRandomNumsInArr = (len, min, max, bowlInt) => {
   const arr = [];
   const seen = new Set();
   while (arr.length < len) {
@@ -10,4 +10,4 @@ export const generateRandomNumsInArr = (len, min, max) => {
   return arr;
 };
 
-// console.log(generateRandomNumsInArr(40, 1, 40));
+// console.log(generateRandomNumsInArr(20, 1, 20));
