@@ -6,7 +6,7 @@
   margin: auto;
   display: grid;
   gap: 1rem;
-  background-color: lightseagreen;
+  background-color: #20b2aa;
   /* width: 1180px; */
   height: 820px;
   grid-template-columns: 1.7fr 5fr 1.5fr 0.8fr;
@@ -143,4 +143,8 @@
   background-color: whitesmoke;
   border-radius: 25%;
   padding: 0.5rem;
+}
+
+.player-name {
+  font-size: 2rem;
 }

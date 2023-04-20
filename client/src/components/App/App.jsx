@@ -96,6 +96,13 @@ export const App = () => {
             setPlayer1={setPlayer1}
             player2={player2}
             setPlayer2={setPlayer2}
+            setLevelOneArr={setLevelOneArr}
+            setLevelTwoArr={setLevelTwoArr}
+            setLevelThreeArr={setLevelThreeArr}
+            confirmed={confirmed}
+            setConfirmed={setConfirmed}
+            curPlayer={curPlayer}
+            setCurPlayer={setCurPlayer}
           />
         ))}
 

@@ -8,10 +8,16 @@ export const Board = ({
   levelOneArr,
   levelTwoArr,
   levelThreeArr,
+  setLevelOneArr,
+  setLevelTwoArr,
+  setLevelThreeArr,
   player1,
   setPlayer1,
   player2,
   setPlayer2,
+  setConfirmed,
+  curPlayer,
+  setCurPlayer,
 }) => {
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
@@ -28,6 +34,13 @@ export const Board = ({
           i === 1 ? levelOneArr : i === 2 ? levelTwoArr : levelThreeArr
         }
         level={i}
+        setCards={
+          i === 1
+            ? setLevelOneArr
+            : i === 2
+            ? setLevelTwoArr
+            : setLevelThreeArr
+        }
       />,
     );
   }
@@ -45,11 +58,12 @@ export const Board = ({
   for (let i = 0; i < 6; i++) {
     tokens.push(<Token key={i} color={obj[i]} />);
   }
-
+  const curPlayerName = curPlayer === 0 ? player1.name : player2.name;
+  const curOpponentName = curPlayer === 1 ? player1.name : player2.name;
   return (
     <div className="board">
       <div className="opponent-board">
-        <div className="player-name">Opponent Name</div>
+        <div className="player-name">{curOpponentName}</div>
         <div className="player-points">Current Points</div>
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>
@@ -133,7 +147,7 @@ export const Board = ({
         {tokens}
       </div>
       <div className="player-board">
-        <div className="player-name">Player Name</div>
+        <div className="player-name">{curPlayerName}</div>
         <div className="player-points">Current Points</div>
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>
@@ -188,7 +202,15 @@ export const Board = ({
         </div>
         <div className="reserved-cards">Reserved Cards</div>
       </div>
-      <div className="confirm-board">{<Confirm />}</div>
+      <div className="confirm-board">
+        {
+          <Confirm
+            curPlayer={curPlayer}
+            setCurPlayer={setCurPlayer}
+            setConfirmed={setConfirmed}
+          />
+        }
+      </div>
     </div>
   );
 };
