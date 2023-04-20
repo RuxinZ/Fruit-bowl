@@ -1,7 +1,7 @@
 .card-container {
   width: 100px;
   height: 100px;
-  background-color: aliceblue;
+  background-color: lightyellow;
   border-radius: 10px;
   border: 2px solid black;
   margin: auto;
@@ -19,6 +19,7 @@
 .points {
   font-size: 2rem;
   text-align: end;
+  margin-bottom: 1rem;
 }
 
 .green,

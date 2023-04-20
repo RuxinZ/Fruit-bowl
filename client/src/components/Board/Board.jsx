@@ -12,13 +12,21 @@ export const Board = ({
   setLevelTwoArr,
   setLevelThreeArr,
   player1,
-  setPlayer1,
   player2,
-  setPlayer2,
   setConfirmed,
   curPlayer,
   setCurPlayer,
+  currentCards1,
+  currentCards2,
+  currentCards3,
+  setCurrentCards1,
+  setCurrentCards2,
+  setCurrentCards3,
 }) => {
+  console.log('cur1: ', currentCards1);
+  console.log('cur2: ', currentCards2);
+  console.log('cur3: ', currentCards3);
+  // console.log('L1: ', levelOneArr);
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
     <Bowl key={i} bowlIndex={i} info={obj} />
@@ -33,6 +41,9 @@ export const Board = ({
         cardArr={
           i === 1 ? levelOneArr : i === 2 ? levelTwoArr : levelThreeArr
         }
+        currentCards={
+          i === 1 ? currentCards1 : i === 2 ? currentCards2 : currentCards3
+        }
         level={i}
         setCards={
           i === 1
@@ -40,6 +51,13 @@ export const Board = ({
             : i === 2
             ? setLevelTwoArr
             : setLevelThreeArr
+        }
+        setCurrentCards={
+          i === 1
+            ? setCurrentCards1
+            : i === 2
+            ? setCurrentCards2
+            : setCurrentCards3
         }
       />,
     );

@@ -54,6 +54,9 @@ export const App = () => {
   const [levelOneArr, setLevelOneArr] = useState([]);
   const [levelTwoArr, setLevelTwoArr] = useState([]);
   const [levelThreeArr, setLevelThreeArr] = useState([]);
+  const [currentCards1, setCurrentCards1] = useState([]);
+  const [currentCards2, setCurrentCards2] = useState([]);
+  const [currentCards3, setCurrentCards3] = useState([]);
   const [bowlsArr, setBowlsArr] = useState([]);
   return (
     <>
@@ -75,6 +78,9 @@ export const App = () => {
           l2Ind={l2Ind}
           l3Ind={l3Ind}
           bowlInd={bowlInd}
+          setCurrentCards1={setCurrentCards1}
+          setCurrentCards2={setCurrentCards2}
+          setCurrentCards3={setCurrentCards3}
         />
       )}
       {mode === 'inGame' &&
@@ -93,9 +99,7 @@ export const App = () => {
             levelTwoArr={levelTwoArr}
             levelThreeArr={levelThreeArr}
             player1={player1}
-            setPlayer1={setPlayer1}
             player2={player2}
-            setPlayer2={setPlayer2}
             setLevelOneArr={setLevelOneArr}
             setLevelTwoArr={setLevelTwoArr}
             setLevelThreeArr={setLevelThreeArr}
@@ -103,6 +107,12 @@ export const App = () => {
             setConfirmed={setConfirmed}
             curPlayer={curPlayer}
             setCurPlayer={setCurPlayer}
+            currentCards1={currentCards1}
+            currentCards2={currentCards2}
+            currentCards3={currentCards3}
+            setCurrentCards1={setCurrentCards1}
+            setCurrentCards2={setCurrentCards2}
+            setCurrentCards3={setCurrentCards3}
           />
         ))}
 

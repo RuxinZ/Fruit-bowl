@@ -1,4 +1,4 @@
-import { generateRandomNumsInArr } from '../../shared/generateRandomNumsInArr';
+// import { generateRandomNumsInArr } from '../../shared/generateRandomNumsInArr';
 import './SignIn.css';
 export const SignIn = ({
   onSignin,
@@ -17,6 +17,9 @@ export const SignIn = ({
   l2Ind,
   l3Ind,
   bowlInd,
+  setCurrentCards1,
+  setCurrentCards2,
+  setCurrentCards3,
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,22 +40,40 @@ export const SignIn = ({
         const data = await response.json();
 
         const arr1 = [];
+        const cur1 = [];
         for (let i = 0; i < l1Ind.length; i++) {
-          arr1.push(data.find(obj => obj.ID === l1Ind[i].toString()));
+          if (i < 4)
+            cur1.push(data.find(obj => obj.ID === l1Ind[i].toString()));
+          else {
+            arr1.push(data.find(obj => obj.ID === l1Ind[i].toString()));
+          }
         }
         setLevelOneArr(arr1);
+        setCurrentCards1(cur1);
 
         const arr2 = [];
+        const cur2 = [];
         for (let i = 0; i < l2Ind.length; i++) {
-          arr2.push(data.find(obj => obj.ID === l2Ind[i].toString()));
+          if (i < 4)
+            cur2.push(data.find(obj => obj.ID === l2Ind[i].toString()));
+          else {
+            arr2.push(data.find(obj => obj.ID === l2Ind[i].toString()));
+          }
         }
         setLevelTwoArr(arr2);
+        setCurrentCards2(cur2);
 
         const arr3 = [];
+        const cur3 = [];
         for (let i = 0; i < l3Ind.length; i++) {
-          arr3.push(data.find(obj => obj.ID === l3Ind[i].toString()));
+          if (i < 4)
+            cur3.push(data.find(obj => obj.ID === l3Ind[i].toString()));
+          else {
+            arr3.push(data.find(obj => obj.ID === l3Ind[i].toString()));
+          }
         }
         setLevelThreeArr(arr3);
+        setCurrentCards3(cur3);
       } catch (err) {
         console.log(`Error fetching cards: ${err}`);
       }

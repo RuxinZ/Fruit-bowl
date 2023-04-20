@@ -17,6 +17,7 @@ export const Bowl = ({ bowlIndex, info }) => {
         <div className={`${info.Blue ? 'blue' : 'hidden'}`}>
           <div>Blue: &nbsp;</div>
           <div>{info.Blue}&nbsp;</div>
+          <img src="http://localhost:3000/card-icon" alt="card" />
         </div>
         <div className={`${info.Black ? 'black' : 'hidden'}`}>
           <div>Black: &nbsp; </div>
