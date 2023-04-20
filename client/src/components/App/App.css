@@ -14,7 +14,7 @@
 } */
 
 #root {
-  /* background-color: purple; */
+  position: relative;
   width: 1180px;
   height: 820px;
   margin: 0;

@@ -13,3 +13,21 @@
   background-color: whitesmoke;
   border-radius: 8px;
 }
+.facedown {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.L1 {
+  background-color: #40c057;
+}
+
+.L2 {
+  background-color: #fab005;
+}
+
+.L3 {
+  background-color: #228be6;
+}

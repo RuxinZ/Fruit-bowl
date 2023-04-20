@@ -3,6 +3,7 @@
 } */
 
 .board {
+  margin: auto;
   display: grid;
   gap: 1rem;
   background-color: lightseagreen;
@@ -18,7 +19,7 @@
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 2fr;
 }
 .menu-board {
   background-color: lightcoral;
@@ -72,9 +73,13 @@
   grid-column: 5;
 }
 
-.token-card {
+.token-card-board {
   grid-column: 2 / 8;
   background-color: lightcyan;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
 }
 .reserved-cards {
   grid-column: 8/10;
@@ -83,4 +88,20 @@
 
 .player-points {
   grid-column: 8/10;
+}
+
+.token-card {
+  border: 1px solid burlywood;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.token-icon {
 }

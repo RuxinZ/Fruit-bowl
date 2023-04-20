@@ -82,7 +82,7 @@ export const SignIn = ({
   }
   return (
     <div className="box-container">
-      <h1>Fruit Bowl</h1>
+      <h1 style={{ fontSize: '4rem' }}>Fruit Bowl</h1>
       <h2>Enter player names:</h2>
       <form onSubmit={handleSubmit} className="player-signin">
         <div className="row">

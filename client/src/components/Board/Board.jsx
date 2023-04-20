@@ -20,13 +20,14 @@ export const Board = ({
   // console.log('l1cards: ', levelOneArr);
   // make card board
   const cardRows = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 3; i > 0; i--) {
     cardRows.push(
       <CardRow
         key={i}
         info={
-          i === 0 ? levelOneArr : i === 1 ? levelTwoArr : levelThreeArr
+          i === 1 ? levelOneArr : i === 2 ? levelTwoArr : levelThreeArr
         }
+        level={i}
       />,
     );
   }
@@ -40,9 +41,58 @@ export const Board = ({
   return (
     <div className="board">
       <div className="opponent-board">
-        <div className="player-name">Player Name</div>
+        <div className="player-name">Opponent Name</div>
         <div className="player-points">Current Points</div>
-        <div className="token-card">Tokens/Cards</div>
+        <div className="token-card-board">
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+        </div>
         <div className="reserved-cards">Reserved Cards</div>
       </div>
       <div className="menu-board">Menu</div>
@@ -61,7 +111,56 @@ export const Board = ({
       <div className="player-board">
         <div className="player-name">Player Name</div>
         <div className="player-points">Current Points</div>
-        <div className="token-card">Tokens/Cards</div>
+        <div className="token-card-board">
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+          <div className="token-card">
+            <div className="box">
+              <div className="token-icon">Tokens</div>
+              <div className="cards-icon">Cards</div>
+              <div className="num">0</div>
+              <div className="num">0</div>
+            </div>
+          </div>
+        </div>
         <div className="reserved-cards">Reserved Cards</div>
       </div>
       <div className="confirm-board">{<Confirm />}</div>
