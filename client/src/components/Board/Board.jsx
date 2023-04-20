@@ -38,6 +38,8 @@ export const Board = ({
       <CardRow
         key={i}
         currentPlayer={currentPlayer}
+        player1={player1}
+        player2={player2}
         setPlayer1={setPlayer1}
         setPlayer2={setPlayer2}
         cardArr={

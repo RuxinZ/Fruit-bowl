@@ -9,6 +9,8 @@ export const CardRow = ({
   currentPlayer,
   setPlayer1,
   setPlayer2,
+  player1,
+  player2,
 }) => {
   // console.log('info: ', info);
   const cards = [];
@@ -17,9 +19,11 @@ export const CardRow = ({
       <Card
         key={i}
         info={currentCards[i]}
-        currentPlayer={currentPlayer}
+        currentPlayerName={currentPlayer.name}
         setPlayer1={setPlayer1}
         setPlayer2={setPlayer2}
+        player1={player1}
+        player2={player2}
       />,
     );
   }

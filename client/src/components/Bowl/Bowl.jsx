@@ -6,7 +6,7 @@ export const Bowl = ({ bowlIndex, info }) => {
         <div className="points">3</div>
       </div>
 
-      <div className="card-main">
+      <div className="bowl-card-main">
         <div className={`${info.Green ? 'green' : 'hidden'}`}>
           <div>Green:&nbsp;</div>
           <div>{info.Green}&nbsp;</div>

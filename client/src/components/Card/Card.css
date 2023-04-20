@@ -29,41 +29,54 @@
 }
 .card-main {
   font-size: 0.9rem;
+  display: flex;
+  align-self: start;
+  flex-direction: column;
+  justify-content: end;
+  height: 60px;
+}
+.label-container {
+  margin-bottom: 0.1rem;
+}
+
+.score {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
 }
 
 .card-Green {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid black;
   background-color: #40c057;
 }
 .card-White {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid black;
   background-color: #ffffff;
 }
 .card-Blue {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid black;
   background-color: #228be6;
+  color: white;
 }
 
 .card-Black {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid black;
   background-color: #000000;
+  color: white;
 }
 .card-Red {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid black;
   background-color: #c92a2a;
+  color: white;
+}
+
+.label-hidden {
+  display: none;
+}
+.card-label {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -25,6 +25,12 @@
   align-self: flex-end;
 }
 
+.bowl-card-main {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .green,
 .white,
 .blue,
