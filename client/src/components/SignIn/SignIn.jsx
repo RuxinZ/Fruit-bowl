@@ -23,7 +23,7 @@ export const SignIn = ({
 }) => {
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log('clicked!');
+
     if (!player1.name || !player2.name) {
       setErrmsg('We need two players to start the game!');
       return;
@@ -34,7 +34,9 @@ export const SignIn = ({
 
     // set up a game
     setCurPlayer(Math.round(Math.random()));
-
+    // console.log('l1Ind: ', l1Ind);
+    // console.log('l2Ind: ', l2Ind);
+    // console.log('l3Ind: ', l3Ind);
     const fetchCards = async () => {
       try {
         const response = await fetch(`http://localhost:3000/cards`, {

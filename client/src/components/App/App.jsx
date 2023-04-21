@@ -3,6 +3,7 @@ import './App.css';
 import { SignIn } from '../SignIn';
 import { Transition } from '../InGame';
 import { Board } from '../Board';
+import { GameEnd } from '../GameEnd';
 import {
   l1Ind,
   l2Ind,
@@ -12,11 +13,12 @@ import {
 
 export const App = () => {
   const [mode, setMode] = useState('start');
+
   const [confirmed, setConfirmed] = useState(false);
   const [curPlayer, setCurPlayer] = useState(0);
   const [player1, setPlayer1] = useState({
     name: '',
-    points: 0,
+    points: 1,
     cards: [],
     greenToken: 1,
     greenCard: 2,
@@ -130,7 +132,7 @@ export const App = () => {
             setCurrentCards1={setCurrentCards1}
             setCurrentCards2={setCurrentCards2}
             setCurrentCards3={setCurrentCards3}
-            setCard1_1={setCard1_1}
+            setCard1_1={setCard1_1} // state for a specific card
             setCard1_2={setCard1_2}
             setCard1_3={setCard1_3}
             setCard1_4={setCard1_4}
@@ -142,10 +144,24 @@ export const App = () => {
             setCard3_2={setCard3_2}
             setCard3_3={setCard3_3}
             setCard3_4={setCard3_4}
+            setMode={setMode}
           />
         ))}
 
-      {mode === 'gameOver' && <>Game Over </>}
+      {mode === 'gameOver' && (
+        <GameEnd
+          curPlayer={curPlayer}
+          player1name={player1.name}
+          player2name={player2.name}
+          player1score={player1.points}
+          player2score={player2.points}
+          setMode={setMode}
+          setPlayer1={setPlayer1}
+          setPlayer2={setPlayer2}
+          setConfirmed={setConfirmed}
+          setCurPlayer={setCurPlayer}
+        />
+      )}
     </>
   );
 };

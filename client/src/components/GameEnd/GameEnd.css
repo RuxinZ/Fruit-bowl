@@ -1,12 +1,16 @@
-.box-container {
+.gamend-box-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  background-color: #c5d7cb;
+  background-color: lightseagreen;
+  width: 1180px;
+  height: 850px;
+  /* background-color: #c5d7cb; */
   /* border: 2px solid red; */
 }
 /* .player-signin {

@@ -31,11 +31,17 @@
 }
 .card-main {
   font-size: 0.9rem;
+  /* display: grid; */
   display: flex;
+  flex-direction: column;
   align-self: start;
   flex-direction: column;
   justify-content: end;
-  height: 60px;
+  /* border: 2px solid red; */
+  /* height: 60px; */
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: end;
+  height: 100%;
 }
 .label-container {
   margin-bottom: 0.1rem;
@@ -73,8 +79,8 @@
   display: none;
 }
 .card-label {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 1px solid black;
   font-size: 0.9rem;

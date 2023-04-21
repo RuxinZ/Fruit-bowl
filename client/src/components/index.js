@@ -7,3 +7,4 @@ export * from './CardRow';
 export * from './Card';
 export * from './Token';
 export * from './Confirm';
+export * from './GameEnd';

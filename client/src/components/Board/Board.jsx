@@ -24,6 +24,7 @@ export const Board = ({
   setCurrentCards1,
   setCurrentCards2,
   setCurrentCards3,
+  setMode,
   setCard1_1,
   setCard1_2,
   setCard1_3,
@@ -39,13 +40,58 @@ export const Board = ({
 }) => {
   const currentPlayer = curPlayer === 0 ? player1 : player2;
   const curOpponent = curPlayer === 1 ? player1 : player2;
+  console.log('l1: ', currentCards1);
+  console.log('l2: ', currentCards2);
+  console.log('l3: ', currentCards3);
+  // console.log(curPlayer);
+  // console.log('currentPlayer :', currentPlayer);
+  // console.log(curOpponent);
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
     <Bowl key={i} bowlIndex={i} info={obj} />
   ));
   // make card board
+
+  setCard1_1 = { setCard1_1 };
+  setCard1_2 = { setCard1_2 };
+  setCard1_3 = { setCard1_3 };
+  setCard1_4 = { setCard1_4 };
+  setCard2_1 = { setCard2_1 };
+  setCard2_2 = { setCard2_2 };
+  setCard2_3 = { setCard2_3 };
+  setCard2_4 = { setCard2_4 };
+  setCard3_1 = { setCard3_1 };
+  setCard3_2 = { setCard3_2 };
+  setCard3_3 = { setCard3_3 };
+  setCard3_4 = { setCard3_4 };
+
   const cardRows = [];
   for (let i = 3; i > 0; i--) {
+    let setCard1;
+    let setCard2;
+    let setCard3;
+    let setCard4;
+    switch (i) {
+      case 3:
+        setCard1 = setCard3_1;
+        setCard2 = setCard3_2;
+        setCard3 = setCard3_3;
+        setCard4 = setCard3_4;
+        break;
+      case 2:
+        setCard1 = setCard2_1;
+        setCard2 = setCard2_2;
+        setCard3 = setCard2_3;
+        setCard4 = setCard2_4;
+        break;
+      case 1:
+        setCard1 = setCard1_1;
+        setCard2 = setCard1_2;
+        setCard3 = setCard1_3;
+        setCard4 = setCard1_4;
+        break;
+    }
+
     cardRows.push(
       <CardRow
         key={i}
@@ -75,6 +121,10 @@ export const Board = ({
             ? setCurrentCards2
             : setCurrentCards3
         }
+        setCard1={setCard1}
+        setCard2={setCard2}
+        setCard3={setCard3}
+        setCard4={setCard4}
       />,
     );
   }
@@ -101,6 +151,9 @@ export const Board = ({
     );
   }
 
+  // const handleMenuClick = () => {
+  //   setMode('gameOver');
+  // };
   return (
     <div className="board">
       <div
@@ -110,7 +163,7 @@ export const Board = ({
       >
         <div className="player-name">{curOpponent.name}</div>
         <div className="player-points">
-          Current Points: {curOpponent.points}
+          <strong>Current Points: {curOpponent.points}</strong>
         </div>
 
         <div className="token-card-board">
@@ -167,7 +220,10 @@ export const Board = ({
         <div className="reserved-cards">Reserved Cards</div>
       </div>
       <div className="menu-board">
-        <button className="btn menu-icon">
+        <button
+          onClick={() => setMode('gameOver')}
+          className="btn menu-icon"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -201,7 +257,7 @@ export const Board = ({
       >
         <div className="player-name">{currentPlayer.name}</div>
         <div className="player-points">
-          Current Points: {currentPlayer.points}
+          <strong>Current Points: {currentPlayer.points}</strong>
         </div>
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>

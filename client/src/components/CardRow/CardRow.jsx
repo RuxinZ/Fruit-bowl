@@ -11,10 +11,23 @@ export const CardRow = ({
   setPlayer2,
   player1,
   player2,
+  setCard1,
+  setCard2,
+  setCard3,
+  setCard4,
 }) => {
-  // console.log('info: ', info);
+  // console.log('currentCards: ', currentCards);
   const cards = [];
+
   for (let i = 0; i < 4; i++) {
+    const setCardInfo =
+      i === 0
+        ? setCard1
+        : i === 1
+        ? setCard2
+        : i == 2
+        ? setCard3
+        : setCard4;
     cards.push(
       <Card
         key={i}
@@ -24,6 +37,7 @@ export const CardRow = ({
         setPlayer2={setPlayer2}
         player1={player1}
         player2={player2}
+        setCardInfo={setCardInfo}
       />,
     );
   }
