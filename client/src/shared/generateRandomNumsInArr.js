@@ -10,4 +10,4 @@ export const generateRandomNumsInArr = (len, min, max, bowlInt) => {
   return arr;
 };
 
-console.log(generateRandomNumsInArr(30, 41, 70));
+// console.log(generateRandomNumsInArr(30, 41, 70));
