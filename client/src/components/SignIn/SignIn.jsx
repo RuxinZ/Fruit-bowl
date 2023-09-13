@@ -25,10 +25,18 @@ export const SignIn = ({
     e.preventDefault();
 
     if (!player1.name || !player2.name) {
-      setErrmsg('We need two players to start the game!');
+      const name = player1.name
+        ? `${player1.name}, `
+        : player2.name
+        ? `${player2.name}, `
+        : '';
+      setErrmsg(name + 'We need two players to start the game!');
       return;
     } else if (player1.name === player2.name) {
-      setErrmsg('You are not playing against yourself. Go grab a friend!');
+      setErrmsg(
+        `${player1.name}, ` +
+          'You are not playing against yourself. Go grab a friend!',
+      );
       return;
     }
 

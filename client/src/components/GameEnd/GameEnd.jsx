@@ -55,7 +55,7 @@ export const GameEnd = ({
   return (
     <>
       <div className="gamend-box-container">
-        <h2>GameOver</h2>
+        <h2>Game Over</h2>
         <h1 style={{ fontSize: '4rem' }}>
           {player1score > player2score
             ? `Congratulations, ${player1name}!`

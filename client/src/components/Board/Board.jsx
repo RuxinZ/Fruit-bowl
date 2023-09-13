@@ -40,12 +40,7 @@ export const Board = ({
 }) => {
   const currentPlayer = curPlayer === 0 ? player1 : player2;
   const curOpponent = curPlayer === 1 ? player1 : player2;
-  console.log('l1: ', currentCards1);
-  console.log('l2: ', currentCards2);
-  console.log('l3: ', currentCards3);
-  // console.log(curPlayer);
-  // console.log('currentPlayer :', currentPlayer);
-  // console.log(curOpponent);
+
   // make bowl board
   const bowls = bowlsArr.map((obj, i) => (
     <Bowl key={i} bowlIndex={i} info={obj} />
@@ -163,7 +158,7 @@ export const Board = ({
       >
         <div className="player-name">{curOpponent.name}</div>
         <div className="player-points">
-          <strong>Current Points: {curOpponent.points}</strong>
+          <strong>Points: {curOpponent.points}</strong>
         </div>
 
         <div className="token-card-board">
@@ -257,7 +252,7 @@ export const Board = ({
       >
         <div className="player-name">{currentPlayer.name}</div>
         <div className="player-points">
-          <strong>Current Points: {currentPlayer.points}</strong>
+          <strong>Points: {currentPlayer.points}</strong>
         </div>
         <div className="token-card-board">
           <div className="token-row">{tokens}</div>
