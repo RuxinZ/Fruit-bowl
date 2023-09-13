@@ -1,4 +1,4 @@
-# Fruit Bowl
+# 🍍 Fruit Bowl
 
 Fruit Bowl is a two-player, turn-based, pass-and-play game inspired by the classic board game Splendor. It is a full-stack, single-page React project. <br>
 
